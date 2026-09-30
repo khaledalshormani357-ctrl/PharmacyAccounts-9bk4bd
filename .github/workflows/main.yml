@@ -31,7 +31,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      - name: Enable Corepack and install dependencies
+      - name: Enable Corepack, prepare pnpm and install dependencies
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
