@@ -32,9 +32,11 @@ jobs:
             ${{ runner.os }}-pnpm-
 
       - name: Enable Corepack and install dependencies
-        run: |
-          corepack enable
-          pnpm install --frozen-lockfile
+  run: |
+    corepack enable
+    corepack prepare pnpm@latest --activate
+    pnpm --version
+    pnpm install --frozen-lockfile
 
       - name: Type check
         run: pnpm run type-check --if-present
